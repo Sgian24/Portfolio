@@ -5,13 +5,14 @@ import Nav from "react-bootstrap/Nav";
 const NavBar = () => {
     return (
         <>
-            <Navbar className="bg-black" collaspeonSelect expand="sm">
-               <Container>
+            <Navbar collaspeonSelect expand="sm">
+               <Container style={{paddingLeft:"5vw"}}fluid>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-                <Navbar.Collapse>
-                    <Nav>
-                        <Nav.Link className="text-white">ABOUT</Nav.Link>
-                        <Nav.Link className="text-white">PROJECTS</Nav.Link>
+                <Navbar.Collapse >
+                    <Nav className="nav-container gap-4" style={{fontFamily:"barlow-bold"}}>
+                        <Nav.Link className="text-black" href="#about">ABOUT</Nav.Link>
+                        <Nav.Link className="text-black" href="#projects">PROJECTS</Nav.Link>
+                        <Nav.Link className="text-black" href="#contact">CONTACT</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                </Container>

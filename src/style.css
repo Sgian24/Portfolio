@@ -15,6 +15,11 @@
     src: url(./Assets//Barlow-Bold.otf);
 }
 
+.nav-link:hover {
+    color: white !important;
+    background-color: black;
+}
+
 Button {
     width: 100px;
 }
@@ -52,6 +57,34 @@ a {
     height: 91vh;
 }
 
+.about-container {
+    opacity: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    height: 91vh;
+    transition: 0.8s ease-in;
+}
+
+.project-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    height: 91vh;
+}
+
+.fade-in-row {
+    opacity: 0;
+    transition: 0.8s ease-in;
+}
+
+.contact-container {
+    opacity: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    height: 91vh;
+    transition: 0.8s ease-in;
+}
+
+
 .heading {
     font-family: shapiro;
     letter-spacing: 5px;
@@ -63,4 +96,48 @@ a {
 
 .carousel {
     border-radius: 2%;
+}
+
+.github-link:hover {
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 1200px) {
+    .hor-portfolio-list {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .name {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .name {
+        font-size: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .nav-container {
+        gap:0 !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .name {
+        font-size: 2.5rem;
+    }
+    h5 {
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 390px) {
+    .name {
+        font-size: 2rem;
+    }
 }

@@ -17,7 +17,10 @@ import { Link } from "react-router-dom";
 const Home = () => {
 
     const [vantaEffect, setVantaEffect] = useState(null);
-    const vantaRef = useRef(null)
+    const vantaRef = useRef(null);
+    const aboutRef = useRef(null);
+    const projectRef = useRef(null);
+    const contactRef = useRef(null);
 
     useEffect(() => {
         if (!vantaEffect) {
@@ -40,6 +43,35 @@ const Home = () => {
             if (vantaEffect) vantaEffect.destroy()
         }
     }, [vantaEffect])
+   
+    useEffect(() => {
+        const observer = new IntersectionObserver(i => {
+            if (i[0].isIntersecting) {
+                aboutRef.current.style.opacity = "1";
+        }});
+        const observerTwo = new IntersectionObserver(i => {
+            if (i[0].isIntersecting) {
+                document.getElementsByClassName("fade-in-row")[0].style.opacity = "1";
+                document.getElementsByClassName("fade-in-row")[1].style.opacity = "1";
+                document.getElementsByClassName("fade-in-row")[2].style.opacity = "1";
+        }});
+        const observerThree = new IntersectionObserver(i => {
+            if (i[0].isIntersecting) {
+                contactRef.current.style.opacity = "1"
+        }});
+        if (aboutRef.current && projectRef.current && contactRef.current) {
+            observer.observe(aboutRef.current)
+            observerTwo.observe(projectRef.current)
+            observerThree.observe(contactRef.current)
+        }
+        return () => { 
+            if (aboutRef.current && projectRef.current && contactRef.current) {
+                observer.unobserve(aboutRef.current)
+                observerTwo.unobserve(projectRef.current)
+                observerThree.unobserve(contactRef.current)
+            }
+        }
+    },[aboutRef])
 
     return (
         <>
@@ -53,9 +85,9 @@ const Home = () => {
                 </Col>
             </Row>
         </Container>
-        <Container className="hero-container pt-5 pb-5 h-auto" fluid>
+        <Container id="about" className="about-container pt-5 pb-5 h-auto" ref={aboutRef} fluid>
             <Row>
-                <Col>
+                <Col className="mb-4 mb-md-4 mb-lg-0 mb-xl-0" md={12} lg={6} xl={6}>
                     <h1 className="heading">ABOUT</h1>
                     <hr />
                     <p>My name is Sunny Gian. I am a frontend engineer with a UX design background. I have a passion for design but enjoy the more technical 
@@ -73,19 +105,19 @@ const Home = () => {
                        <li>FL Studio (Audio Software)</li> 
                     </ul>
                 </Col>
-                <Col className="d-flex flex-column align-items-end justify-content-center">
+                <Col className="d-flex flex-column align-items-center align-items-sm-center align-items-xl-end align-items-xxl-end justify-content-center">
                     <img className="headshot object-fit-cover" src={headShot} height="400"  width="400" alt="" />
                 </Col>
             </Row>
         </Container>
-        <Container className="hero-container pt-5 pb-5 bg-black h-auto" fluid>
-            <Row>
+        <Container className="project-container pt-5 pb-5 bg-black h-auto" ref={projectRef} fluid>
+            <Row className="fade-in-row">
                 <Col className="text-white">
-                    <h1 className="heading mb-4">PROJECTS</h1>
+                    <h1 id="projects" className="heading mb-4">PROJECTS</h1>
                     <hr />
                 </Col>
             </Row>
-            <Row className="mb-5">
+            <Row className="fade-in-row mb-5">
                 <Col sm={12} xl={5} xxl={4} className="d-flex flex-column text-white">
                     <h4 className="mb-3">• NBA Fantasy Visualizer</h4>
                     <p>A web app I developed to visualize NBA player stats with graphs. Users can create an account to draft and save their own roster. Data 
@@ -103,7 +135,7 @@ const Home = () => {
                     </ul>
                     <div className="pb-2 d-flex h-100 align-items-end">
                         <a className="btn btn-light me-3" target="_blank" href="https://sgian24.github.io/FantasyNBABasketball/">VIEW PROJECT</a>
-                        <a className="text-white pb-2" href="https://github.com/Sgian24/FantasyNBABasketball/" target="_blank">Github Repository</a>
+                        <a className="github-link text-white pb-2" href="https://github.com/Sgian24/FantasyNBABasketball/" target="_blank">Github Repository</a>
                     </div>
                 </Col>
                 <Col className="d-flex flex-column justify-content-center pt-4 " sm={0} xl={7} xxl={8}>
@@ -117,7 +149,7 @@ const Home = () => {
                     </Carousel>
                 </Col>
             </Row>
-            <Row>
+            <Row className="fade-in-row">
                 <Col sm={12} xl={5} xxl={4} className="d-flex flex-column text-white">
                     <h4 className="mb-3">• Haus of Rogue Portfolio</h4>
                     <p>Responsive portfolio website I developed for graphic designer and artist Billie Rogue.</p>
@@ -129,10 +161,10 @@ const Home = () => {
                     </ul>
                     <div className="pb-2 d-flex h-100 align-items-end">
                         <a className="btn btn-light me-3" target="_blank" href="https://hausofrogue.com/">VIEW SITE</a>
-                        <a className="text-white pb-2" href="https://github.com/Sgian24/HausofRoguePortfolio/" target="_blank">Github Repository</a>
+                        <a className="github-link text-white pb-2" href="https://github.com/Sgian24/HausofRoguePortfolio/" target="_blank">Github Repository</a>
                     </div>
                 </Col>
-                <Col className="d-flex flex-column justify-content-center pt-5 " sm={0} xl={7} xxl={8}>
+                <Col className="d-flex flex-column justify-content-center pt-4 pt-lg-4 pt-xl-5 pt-xxl-5 " sm={0} xl={7} xxl={8}>
                     <Carousel className="carousel overflow-hidden" data-bs-theme="dark">
                         <Carousel.Item >
                             <img className="carousel" src={hor1} width="100%" alt="" />
@@ -150,13 +182,13 @@ const Home = () => {
                 </Col>
             </Row>
         </Container>
-        <Container className="hero-container pt-5 pb-5 h-auto" fluid>
+        <Container className="contact-container pt-5 pb-5 h-auto" ref={contactRef} fluid>
             <Row>
                 <Col>
-                    <h1 className="text-center heading">GET IN TOUCH</h1>
+                    <h1 id="contact" className="text-center heading">GET IN TOUCH</h1>
                     <hr />
                     <div className="d-flex justify-content-center mb-3">
-                        <Link className="btn btn-outline-dark me-3" to="mailto:sgian08@gmail.com" style={{width:"110px"}}><i className="bi bi-envelope me-2"></i>Email</Link>
+                        <Link className="btn btn-outline-dark me-3" to="mailto:sgian08@gmail.com" style={{width:"110px"}}><i className="bi bi-envelope me-2"></i>EMAIL</Link>
                         <a className="btn btn-outline-dark me-3" style={{width:"110px"}} target="_blank" href="https://github.com/Sgian24"><i className="bi bi-github me-2"></i>GITHUB</a>
                     </div>
                     <p className="text-center" style={{opacity:"50%"}}>Site designed and developed by Sunny Gian.</p>
