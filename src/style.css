@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 @font-face {
     font-family: shapiro;
     src: url(./Assets/shapiro-95-super-wide.ttf);
@@ -11,4 +13,54 @@
 @font-face {
     font-family: barlow-bold;
     src: url(./Assets//Barlow-Bold.otf);
+}
+
+Button {
+    width: 100px;
+}
+
+li {
+    font-family: barlow;
+}
+
+p {
+    word-spacing: 3px;
+    font-family: barlow;
+}
+
+h5 {
+    font-family: barlow;
+    letter-spacing: .2rem;
+}
+
+a {
+    font-family: barlow-bold !important;
+}
+
+.name {
+    font-family: shapiro;
+    font-size: 5rem;
+}
+
+.headshot {
+    border-radius: 2%;
+}
+
+.hero-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    height: 91vh;
+}
+
+.heading {
+    font-family: shapiro;
+    letter-spacing: 5px;
+}
+
+.hor-portfolio-list {
+    margin-bottom: 6rem;
+}
+
+.carousel {
+    border-radius: 2%;
 }
