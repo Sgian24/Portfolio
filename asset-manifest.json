@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.80bfaf6e.css",
+    "main.js": "/Portfolio/static/js/main.a1e26e76.js",
+    "static/media/hor-screen-2.jpg": "/Portfolio/static/media/hor-screen-2.0ffbe02e00a7b444f68c.jpg",
+    "static/media/hor-screen-3.jpg": "/Portfolio/static/media/hor-screen-3.1ea178dedb5edf624134.jpg",
+    "static/media/headshot.jpeg": "/Portfolio/static/media/headshot.9dc6518fa6162fad452c.jpeg",
+    "static/media/hor-screen-4.jpg": "/Portfolio/static/media/hor-screen-4.77c0396f9c9bce99408f.jpg",
+    "static/media/hor-screen-1.jpg": "/Portfolio/static/media/hor-screen-1.0c8fda99b48e50581ca0.jpg",
+    "static/media/nba-screenshot-1.jpg": "/Portfolio/static/media/nba-screenshot-1.4369f703c63b1e1459a2.jpg",
+    "static/media/nba-screen2.jpg": "/Portfolio/static/media/nba-screen2.8f1e859f03f28e327789.jpg",
+    "static/media/Barlow-Bold.otf": "/Portfolio/static/media/Barlow-Bold.53f341888560595f429a.otf",
+    "static/media/Barlow-Light.otf": "/Portfolio/static/media/Barlow-Light.66a25bac83c871fc7e42.otf",
+    "static/media/shapiro-95-super-wide.ttf": "/Portfolio/static/media/shapiro-95-super-wide.deef8aed5c71052e2153.ttf",
+    "index.html": "/Portfolio/index.html",
+    "main.80bfaf6e.css.map": "/Portfolio/static/css/main.80bfaf6e.css.map",
+    "main.a1e26e76.js.map": "/Portfolio/static/js/main.a1e26e76.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80bfaf6e.css",
+    "static/js/main.a1e26e76.js"
+  ]
+}
