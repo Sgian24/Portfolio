@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from "react";
+import NET from 'vanta/dist/vanta.net.min';
 import NavBar from "../Components/NavBar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,10 +15,36 @@ import hor4 from "..//Assets/hor-screen-4.jpg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+
+    const [vantaEffect, setVantaEffect] = useState(null);
+    const vantaRef = useRef(null)
+
+    useEffect(() => {
+        if (!vantaEffect) {
+            setVantaEffect(NET({
+                el: vantaRef.current,
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xffffff,
+                backgroundColor: 0x0,
+                maxDistance: 22.00,
+                showDots: false
+            }))
+        }
+        return () => {
+            if (vantaEffect) vantaEffect.destroy()
+        }
+    }, [vantaEffect])
+
     return (
         <>
         <NavBar />
-        <Container className="hero-container bg-black" fluid>
+        <Container ref={vantaRef} className="hero-container bg-black" fluid>
             <Row className="h-100">
                 <Col className="d-flex flex-column align-items-center justify-content-center pt-5 text-white">
                     <h5>Hi, my name is</h5>
@@ -61,7 +89,7 @@ const Home = () => {
                 <Col sm={12} xl={5} xxl={4} className="d-flex flex-column text-white">
                     <h4 className="mb-3">• NBA Fantasy Visualizer</h4>
                     <p>A web app I developed to visualize NBA player stats with graphs. Users can create an account to draft and save their own roster. Data 
-                    is fetched from 3 different apis. 
+                    is fetched from 3 different APIs. 
                     </p>
                     <p><strong>Frontend Development Tools Used:</strong></p> 
                     <ul>
