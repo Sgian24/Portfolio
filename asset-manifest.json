@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.80bfaf6e.css",
-    "main.js": "/Portfolio/static/js/main.a1e26e76.js",
+    "main.js": "/Portfolio/static/js/main.45ad0c36.js",
     "static/media/hor-screen-2.jpg": "/Portfolio/static/media/hor-screen-2.0ffbe02e00a7b444f68c.jpg",
     "static/media/hor-screen-3.jpg": "/Portfolio/static/media/hor-screen-3.1ea178dedb5edf624134.jpg",
     "static/media/headshot.jpeg": "/Portfolio/static/media/headshot.9dc6518fa6162fad452c.jpeg",
@@ -14,10 +14,10 @@
     "static/media/shapiro-95-super-wide.ttf": "/Portfolio/static/media/shapiro-95-super-wide.deef8aed5c71052e2153.ttf",
     "index.html": "/Portfolio/index.html",
     "main.80bfaf6e.css.map": "/Portfolio/static/css/main.80bfaf6e.css.map",
-    "main.a1e26e76.js.map": "/Portfolio/static/js/main.a1e26e76.js.map"
+    "main.45ad0c36.js.map": "/Portfolio/static/js/main.45ad0c36.js.map"
   },
   "entrypoints": [
     "static/css/main.80bfaf6e.css",
-    "static/js/main.a1e26e76.js"
+    "static/js/main.45ad0c36.js"
   ]
 }
